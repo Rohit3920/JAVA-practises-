@@ -10,21 +10,5 @@ public class IfElse {
 
         String num = a%2 == 0 ? "Even": "odd";
             System.out.println("this number is " + num +" -> " + a);
-
-        // if (a <= 9) {
-        //     System.out.println("this number is single Digit " + a);
-        //     if (a % 2 == 0) {
-        //         System.out.println("this number is even " + a);
-        //     } else {
-        //         System.out.println("this number is odd " + a);
-        //     }
-        // } else {
-        //     System.out.println("this number is more then one Digit " + a);
-        //     if (a % 2 == 0) {
-        //         System.out.println("this number is even " + a);
-        //     } else {
-        //         System.out.println("this number is odd " + a);
-        //     }
-        // }
     }
 }
