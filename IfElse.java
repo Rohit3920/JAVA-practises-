@@ -1,11 +1,14 @@
+import java.util.Scanner;
+
 public class IfElse {
     public static void main(String[] para){
-        int a = 20;
-        int b = 20;
-        int res = a - b;
-        if(a-b == 10)
-        System.out.println("Subsrtraction for if = "+ res);
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter Year : ");
+        int a = sc.nextInt();
+
+        if(a%4 == 0)
+        System.out.println("this is leaf Year " + a);
         else
-        System.out.println("Subsrtraction for else = "+ res);
+        System.out.println("this is not leaf Year " + a);
     }
 }
