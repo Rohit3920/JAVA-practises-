@@ -1,15 +1,16 @@
+
 public class funCls {
-    public static void main(String[] args){
+
+    public static void main(String[] args) {
         System.out.println("\n\nFunction in JAVA \n------------------------------------------------------------------");
-        // funCls f1 = new funCls();
-        // f1.getData();
-
-        getData();
-
+        int amount = 10000;
+        int time = 2;
+        int rate = 12;
+        simpleInterest(amount, time, rate);
         System.out.println("\n\n");
     }
 
-    public static  void getData(){
-        System.out.println("Static function Called");
+    public static void simpleInterest(int a, int t, int r) {
+        System.out.println("Simple interest : " + (a * t * r) / 100);
     }
 }
