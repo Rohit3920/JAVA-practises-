@@ -1,4 +1,4 @@
-public class InheritanceHierarchical {
+public class InheritanceMultilevel {
     public static void main(String[] args) {
         System.out.println("Hierarchical Inheritance in java");
 
