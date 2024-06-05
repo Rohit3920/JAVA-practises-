@@ -32,10 +32,10 @@ class children2 extends ParentG{
     }
 }
 
-public class InheritanceHirarchical {
+public class InheritanceHybrid {
 
     public static void main(String[] args) {
-        System.out.println("-------- Hirarchical Inheritance in java ----------");
+        System.out.println("-------- Hybrid Inheritance in java ----------");
 
         System.out.println("\n frist children ---------->");
         children1 c1 = new children1();
