@@ -1,2 +1,0 @@
-This is a sample file for file handling in java 
-	write a file using file handling
