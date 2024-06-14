@@ -1,15 +1,26 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.sql.Connection;
+import java.sql.DriverManager;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
         System.out.printf("Hello and welcome!");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        getConnection();
+    }
+
+    public static Connection getConnection() {
+        try{
+            String driver = "com.mysql.jdbc.Driver";
+            String dbURL = "jdbc:mysql://localhost/e-comm";
+            String userNm = "root";
+            String password = "";
+            Class.forName(driver);
+            Connection conn = DriverManager.getConnection(dbURL, userNm, password);
+            System.out.println("Database connected successfully");
+            return conn;
+        }catch (Exception err){
+            System.out.println("Connection error : " + err);
         }
+        return null;
     }
 }
