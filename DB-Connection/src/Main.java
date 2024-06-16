@@ -7,7 +7,10 @@ public class Main {
     public static void main(String[] args) {
         System.out.printf("Hello and welcome!");
 
-    getDate();
+        System.out.println("Insert one data");
+        insertData();
+        System.out.println("Read all data");
+        getDate();
     }
 
     public static Connection getConnection() {
@@ -37,6 +40,20 @@ public class Main {
         }catch (Exception e){
             System.out.println("Error : " + e);
         }
-
     }
+
+    public static void insertData(){
+        try{
+            Statement statement = getConnection().createStatement();
+            int result = statement.executeUpdate("insert into products(name, country) values('dhanaraj','IND')");
+            if(result == 1) {
+                System.out.println("Inserted data successfully");
+            }else {
+                  System.out.println("insert data failed");
+            }
+        }catch(Exception err){
+            System.out.println("Error : " + err);
+        }
+    }
+
 }
