@@ -1,11 +1,13 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 public class Main {
     public static void main(String[] args) {
         System.out.printf("Hello and welcome!");
 
-        getConnection();
+    getDate();
     }
 
     public static Connection getConnection() {
@@ -22,5 +24,19 @@ public class Main {
             System.out.println("Connection error : " + err);
         }
         return null;
+    }
+
+    public static void getDate(){
+        try {
+            Statement statement = getConnection().createStatement();
+            ResultSet result = statement.executeQuery("Select * from products");
+            while(result.next()){
+                System.out.println(result.getString("name") +
+                        " " + result.getString("country"));
+            }
+        }catch (Exception e){
+            System.out.println("Error : " + e);
+        }
+
     }
 }
