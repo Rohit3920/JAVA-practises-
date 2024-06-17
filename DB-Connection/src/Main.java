@@ -2,6 +2,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -11,10 +12,12 @@ public class Main {
 //        insertData();
 //        System.out.println("Delete one data from database");
 //        deleteData();
-        System.out.println("Update one data from database");
-        updateData();
-        System.out.println("Read all data");
-        getDate();
+//        System.out.println("Update one data from database");
+//        updateData();
+        System.out.println("Show Data entires from database by user throught");
+        getRecordWithInput();
+//        System.out.println("Read all data");
+//        getDate();
     }
 
     public static Connection getConnection() {
@@ -89,4 +92,22 @@ public class Main {
            System.out.println("Error : " + err);
        }
     }
+
+    public static void getRecordWithInput(){
+        try {
+            Scanner scan = new Scanner(System.in);
+            int input = scan.nextInt();
+
+            Statement statement = getConnection().createStatement();
+            ResultSet result = statement.executeQuery("Select * from products where id ="+input);
+            while(result.next()) {
+                System.out.println(result.getString("id") +
+                        " " + result.getString("name") + " "+
+                        " " + result.getString("country"));
+            }
+        }catch (Exception err){
+            System.out.println("Error : " + err);
+        }
+    }
+
 }
