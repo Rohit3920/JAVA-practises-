@@ -9,8 +9,10 @@ public class Main {
 
 //        System.out.println("Insert one data");
 //        insertData();
-        System.out.println("Delete one data from database");
-        deleteData();
+//        System.out.println("Delete one data from database");
+//        deleteData();
+        System.out.println("Update one data from database");
+        updateData();
         System.out.println("Read all data");
         getDate();
     }
@@ -73,5 +75,18 @@ public class Main {
             System.out.println("Error : " + err);
         }
     }
-    
+
+    public static void updateData(){
+       try {
+           Statement statement = getConnection().createStatement();
+           int result = statement.executeUpdate("update products set id =1 where name='ROHIT'");
+           if(result == 1) {
+               System.out.println("Updated data successfully");
+           }else{
+               System.out.println("Update data failed");
+           }
+       }catch(Exception err){
+           System.out.println("Error : " + err);
+       }
+    }
 }
